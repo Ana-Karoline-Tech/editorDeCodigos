@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navy Code Editor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      Navy Editor — <span id="current-file-header">script.js</span>
+    </div>
+
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="sidebar-icon active" id="toggle-explorer" title="Explorer">
+          <span id="explorer-arrow">◀</span>
+        </div>
+      </div>
+
+      <div class="explorer" id="explorer">
+        <div class="explorer-header">
+          <span>Explorer</span>
+          <div class="explorer-actions">
+            <button class="explorer-btn" id="btn-new-file" title="Novo Arquivo">
+              📄
+            </button>
+            <button class="explorer-btn" id="btn-new-folder" title="Nova Pasta">
+              📁
+            </button>
+          </div>
+        </div>
+        <div class="file-tree" id="file-tree"></div>
+      </div>
+
+      <div class="editor-section">
+        <div class="tabs">
+          <div class="tab" id="tab-html">📄 index.html</div>
+          <div class="tab" id="tab-css">🎨 style.css</div>
+          <div class="tab active" id="tab-js">⚡ script.js</div>
+          <button
+            class="tab-action-btn hidden"
+            id="btn-toggle-console"
+            title="Mostrar/Ocultar console"
+          >
+            🖥️
+          </button>
+        </div>
+
+        <div class="content">
+          <div class="editor-panel">
+            <div id="editor-html" class="monaco-container hidden"></div>
+            <div id="editor-css" class="monaco-container hidden"></div>
+            <div id="editor-js" class="monaco-container">
+              <div class="js-console-container">
+                <div class="js-editor-area" id="js-monaco-editor"></div>
+                <div class="js-console-area" id="console-panel">
+                  <div class="console-header">
+                    <span class="console-title">🖥️ CONSOLE</span>
+                    <button class="console-clear-btn" id="btn-clear-console">
+                      Limpar
+                    </button>
+                  </div>
+                  <div class="console-content" id="js-console-output"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-panel" id="preview-panel">
+            <div class="preview-label">PREVIEW</div>
+            <iframe id="preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div>📄 <span id="current-file">script.js</span></div>
+      <div>
+        <span>UTF-8</span>
+        <span style="margin-left: 12px" id="language">JavaScript</span>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
