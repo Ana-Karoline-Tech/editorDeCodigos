@@ -1,0 +1,59 @@
+let dados = [
+    {
+        nome: "Ana",
+        idade: 23,
+        nacionalidade: "brasileira",
+        profissao: "Desenvolvedora WEB",
+        formacao: {
+            faculdade: "MIT",
+            posGraduacao: "Engenharia de Software",
+            estagio: "Coca-Cola"
+        }
+    },
+    {
+        nome: "Bruno",
+        idade: 28,
+        nacionalidade: "portuguesa",
+        profissao: "Designer UI/UX",
+        formacao: {
+            faculdade: "USP",
+            posGraduacao: "Design Digital",
+            estagio: "Adobe"
+        }
+    },
+    {
+        nome: "Carlos",
+        idade: 35,
+        nacionalidade: "angolano",
+        profissao: "Engenheiro de Dados",
+        formacao: {
+            faculdade: "Oxford",
+            posGraduacao: "Big Data",
+            estagio: "Google"
+        }
+    },
+    {
+        nome: "Daniela",
+        idade: 26,
+        nacionalidade: "brasileira",
+        profissao: "Analista de Sistemas",
+        formacao: {
+            faculdade: "UNICAMP",
+            posGraduacao: "Segurança da Informação",
+            estagio: "Microsoft"
+        }
+    }
+];
+
+let resultado = dados.map(dado => `O funcionário(a) ${dado.nome} tem ${dado.idade} e estagiou em ${dado.formacao.estagio}. Está apita ao cargo pois tem formação em ${dado.formacao.faculdade}  e tem o tempo mínimo de experiência profissional.`);
+
+console.log("Relatórios Individuais");
+
+console.log("Tabela Completa");
+console.table(dados);
+console.log(resultado);
+
+console.log("Relatório Completo:")
+console.table(dados);
+console.log("Relatório de Formação:")
+console.table(dados[0].formacao);
