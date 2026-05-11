@@ -1,4 +1,4 @@
-// Global variables
+﻿// Global variables
 let monacoEditors = {};
 let currentTab = "js";
 let explorerVisible = true;
@@ -459,6 +459,7 @@ function updatePreview() {
                 if (originalTable) originalTable.call(console, data);
             };
         })();
+        try {
             ${js}
         } catch(e) {
             console.error('Erro:', e);
